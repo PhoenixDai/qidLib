@@ -3,11 +3,11 @@ function [dist, pathList] = myDijkstra(start, A)
 % This is an implemention of the Dijkstra algorithm
 % input: start node, the undirected adjacent matrix
 % (Maybe work for directed, haven't double check yet)
-% ourput: distance and path from start to all other nodes
+% output: distance and path from start to all other nodes
 
 nodeCnt = size(A, 1);
 
-dist = inf(nodeCnt, 1); 
+dist = inf(nodeCnt, 1);
 dist(start) = 0;
 
 traceList = zeros(nodeCnt, 1);
@@ -26,22 +26,24 @@ while sum(Pnodes)<nodeCnt
             traceList(pst) = temp;
         end
     end
-    % dist(Tnodes) = min(dist(Tnodes)', dist(temp)+A(temp, Tnodes));    
+    % dist(Tnodes) = min(dist(Tnodes)', dist(temp)+A(temp, Tnodes));
     tmpb = find(dist(Tnodes)==min(dist(Tnodes)));
     temp = Tnodes(tmpb(1));
+    % only worked on finding one path, if all path is needed
+    % this function can be called recursively to get all paths
     Pnodes(temp) = 1;
 end
 
 pathList = {};
 for i=1:nodeCnt
     disp(['Start: ' num2str(start) ' End: ' num2str(i) ' Dist: ' num2str(dist(i))]);
-   if i~=start
-       thisTrace = traceList(i);
-       pathList{i} = thisTrace;
-       while thisTrace~=start
-           thisTrace = traceList(thisTrace);
-           pathList{i} = [thisTrace pathList{i}];
-       end
-       disp(['Via: ' num2str(pathList{i}(2:end))]);
-   end  
+    if i~=start
+        thisTrace = traceList(i);
+        pathList{i} = thisTrace;
+        while thisTrace~=start
+            thisTrace = traceList(thisTrace);
+            pathList{i} = [thisTrace pathList{i}];
+        end
+        disp(['Via: ' num2str(pathList{i}(2:end))]);
+    end
 end
