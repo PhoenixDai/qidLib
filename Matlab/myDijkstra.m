@@ -1,5 +1,10 @@
 function [dist, pathList] = myDijkstra(start, A)
 
+% This is an implemention of the Dijkstra algorithm
+% input: start node, the undirected adjacent matrix
+% (Maybe work for directed, haven't double check yet)
+% ourput: distance and path from start to all other nodes
+
 nodeCnt = size(A, 1);
 
 dist = inf(nodeCnt, 1); 
