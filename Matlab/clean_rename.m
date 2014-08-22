@@ -1,5 +1,6 @@
 clear; clc; close all;
 
+% specify route names here
 routes = {'A_LC_to_I94'; 'A_SC_to_I94'; 'A_to_D_I96'; 'D_to_A_I96'};
 
 for i=1:length(routes)
