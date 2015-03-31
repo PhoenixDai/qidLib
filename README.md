@@ -1,7 +1,7 @@
 qidLib
 ======
 
-Some personal implemented algorithms and small tools.
+Some personal implemented algorithms and small tools. 
 
 Matlab
 > clean_rename.m 
