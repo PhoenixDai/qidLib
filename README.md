@@ -4,9 +4,9 @@ qidLib
 Some personal implemented algorithms and small tools. 
 
 Matlab
-> clean_rename.m 
+- clean_rename.m 
     get list of file name and rename as needed
-> getDataFromFig.m
+- getDataFromFig.m
 > image2avi.m
 > mat2text.m
 > traverseFolder.m 
