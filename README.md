@@ -24,3 +24,4 @@ R
     - get common items of two factors
 - XLSXexample.R
 - ioOps.R
+- StringOps.R
